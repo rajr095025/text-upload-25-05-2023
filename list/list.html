@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap.css">
+    <!-- Include stylesheet -->
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.quilljs.com/1.3.6/quill.core.css">
+    <link rel="stylesheet" href="./list.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.quilljs.com/1.3.6/quill.core.css">
+  </head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">PDMR TEXT EDITOR</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="../index.html">Home
+              <span class="visually-hidden">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../list/list.html">List</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Update</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../Get-Content/get-content.html">Get-Content</a>
+          </li>
+          <!-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Separated link</a>
+            </div>
+          </li> -->
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-sm-2" type="search" placeholder="Search">
+          <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <div>
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col" style="text-align: center;">S.NO</th>
+            <th scope="col" style="text-align: center;">ID</th>
+            <th scope="col" style="text-align: center;">Date and Time</th>
+            <th scope="col" style="text-align: center;">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="users">
+          
+        </tbody>
+      </table>
+  </div>
+  <!--modal form update-->
+  <div class="modal" id="my-modal-update">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" style="text-align: center;">Update Content</h5>
+          <button type="button" class="btn-close" id="btn-close-update" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true"></span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+            <div>
+              <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                <div>
+                    <!-- <div style="display: flex; flex-direction: row; align-items: center; gap: 100px; ">
+                        <div class="form-group" style="width: 200px; margin-bottom: 50px;">
+                          <label for="user-id" class="form-label mt-4">ID</label>
+                          <input type="text" class="form-control" id="user-id" name="user-id" aria-describedby="emailHelp" placeholder="Enter ID">
+                          <small id="emailHelp" class="form-text text-muted">We'll never share your ID with anyone else.</small>
+                        </div>
+                        <div>
+                            <button class="btn btn-primary" style="margin-bottom: 50px; " id="get-content-btn" onclick="getContentFunc()">Get Content</button>
+                        </div>
+                    </div> -->
+                    <form id="data-form" style="display: flex; ">
+                      <fieldset>
+                        <div>
+                          <div id="editor" style=" background-color: white !important; color: black !important;  margin-bottom: 50px; ">
+                            
+                          </div>
+                        </div>
+                        <div style="display: flex; justify-content: center;">
+                          <button type="submit" class="btn btn-primary" style="margin-bottom: 50px;">Submit</button>
+                        </div>
+                      </fieldset>
+                    </form>
+                </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <!--modal form- view -->
+  <div class="modal" id="my-modal-view">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" style="text-align: center;">Content</h5>
+          <button type="button" class="btn-close" id="btn-close-view" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true"></span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div id = "display-content">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Include the Quill library -->
+  <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+  <script src="./list.js"></script>
+</body>
+</html>
